@@ -1,0 +1,32 @@
+.sidemenu {
+  width: 250px;
+  background-color: #333;
+  height: 100vh; /* Full height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #575757;
+}
+
+a.router-link-active {
+  background-color: #444;
+}

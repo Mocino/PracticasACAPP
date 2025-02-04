@@ -1,0 +1,11 @@
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 250px; /* Mismo ancho que el sidemenu */
+  padding: 20px;
+}

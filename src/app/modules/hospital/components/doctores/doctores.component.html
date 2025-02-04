@@ -1,0 +1,37 @@
+<app-separador title="Doctores"></app-separador>
+
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <x-input
+      id="nombre"
+      formControlName="nombre"
+      type="text"
+      label="Nombre"
+      placeholder="Ingrese su nombre"
+    ></x-input>
+  </div>
+
+  <div class="form-group">
+    <x-input
+      id="edad"
+      formControlName="edad"
+      type="number"
+      label="Edad"
+      placeholder="Ingrese su edad"
+    ></x-input>
+  </div>
+
+  <div class="form-group">
+    <x-input
+      id="especialidad"
+      formControlName="especialidad"
+      type="text"
+      label="Especialidad"
+      placeholder="Ingrese su especialidad"
+    ></x-input>
+  </div>
+
+  <button type="submit" [disabled]="doctorForm.invalid" class="btn btn-primary">
+    Enviar
+  </button>
+</form>

@@ -1,0 +1,12 @@
+.invalid {
+  color: #f5365c;
+}
+
+.is-invalid {
+  border: 1px solid #f5365c !important;
+}
+
+.is-invalid::placeholder {
+  color: #f5365c !important;
+}
+

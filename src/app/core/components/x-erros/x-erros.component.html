@@ -1,0 +1,88 @@
+<ng-container *ngIf="ngControl?.touched">
+
+  <!-- Campo requerido  -->
+  <ng-container *ngIf="ngControl.errors?.['required']; else minlength">
+    <small *ngIf="ngControl.errors?.['required']">Este campo requerido</small>
+  </ng-container>
+
+  <!-- Caracteres minimos  -->
+  <ng-template #minlength>
+    <ng-container *ngIf="ngControl.errors?.['minlength']; else maxlength">
+      <small *ngIf="ngControl.errors?.['minlength']">
+        Caracteres minimos: {{ngControl.errors?.['minlength']?.['requiredLength']}},
+        Ingresados: {{ngControl.errors?.['minlength']?.['actualLength']}}
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+  <!-- Caracteres Maximos   -->
+  <ng-template #maxlength>
+
+    <ng-container *ngIf="ngControl.errors?.['maxlength']; else min">
+      <small *ngIf="ngControl.errors?.['maxlength']">
+        Caracteres maximos: {{ngControl.errors?.['maxlength']?.['requiredLength']}},
+        Ingresados: {{ngControl.errors?.['maxlength']?.['actualLength']}}
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+  <!-- Numero minimo  -->
+  <ng-template #min>
+
+    <ng-container *ngIf="ngControl.errors?.['min']; else max">
+      <small *ngIf="ngControl.errors?.['min']">
+        Minimo admitido: {{ngControl.errors?.['min']?.['min']}},
+        Ingresados: {{ngControl.errors?.['min']?.['actual']}}
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+  <!-- Numero maximo  -->
+  <ng-template #max>
+
+    <ng-container *ngIf="ngControl.errors?.['max']; else email">
+      <small *ngIf="ngControl.errors?.['max']">
+        Maximo admitido: {{ngControl.errors?.['max']?.['max']}},
+        Ingresado: {{ngControl.errors?.['max']?.['actual']}}
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+  <!-- Email Invalido  -->
+  <ng-template #email>
+
+    <ng-container *ngIf="ngControl.errors?.['email']; else code">
+      <small *ngIf="ngControl.errors?.['email']">
+        Correo invalido, Ej. exampleaemail.com
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+  <!-- Code Invalido  -->
+  <ng-template #code>
+
+    <ng-container *ngIf="ngControl.errors?.['code'];else separator">
+      <small *ngIf="ngControl.errors?.['code']">
+        EL valor ya se encuentra registrado en el sistema
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+   <!-- separador  -->
+  <ng-template #separator>
+
+    <ng-container *ngIf="ngControl.errors?.['separator']">
+      <small *ngIf="ngControl.errors?.['separator']">
+        Separador invalido,Ej.  . o ,
+      </small>
+    </ng-container>
+
+  </ng-template>
+
+</ng-container>

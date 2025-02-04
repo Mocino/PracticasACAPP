@@ -1,0 +1,49 @@
+<div class="form-group">
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label *ngIf="label">{{ label }}</mat-label>
+    <input
+      matInput
+      [id]="id"
+      [type]="type"
+      [placeholder]="placeholder"
+      [attr.maxlength]="maxlength"
+      [attr.minlength]="minlength"
+      [max]="max"
+      [min]="min"
+      [formControl]="control"
+      [readonly]="readonly"
+      (input)="changeControl()"
+      (change)="changeControl()"
+      (blur)="onTouch()">
+
+    <mat-error>
+      <x-erros *ngIf="ngControl" [ngControl]="ngControl"></x-erros>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<!-- <div class="form-group">
+
+  <label class="form-control-label" for="{{id}}" [class.invalid]="ngControl && ngControl.invalid && ngControl.touched">
+    {{ label }}
+  </label>
+  <input
+  class="form-control"
+  [id]="id"
+  [type]="type"
+  placeholder="{{placeholder}}"
+  [class.is-invalid]="ngControl && ngControl.invalid && ngControl.touched"
+  [attr.maxlength]="maxlength"
+  [attr.minlength]="minlength"
+  [max]="max"
+  [min]="min"
+  [formControl]="control"
+  [readonly]="readonly"
+  (input)="changeControl()"
+  (change)="changeControl()"
+  (blur)="onTouch()">
+
+
+    <x-erros *ngIf="ngControl" [ngControl]="ngControl"></x-erros>
+
+</div> -->
