@@ -1,4 +1,28 @@
 <div class="form-group">
+  <label *ngIf="label" for="{{ id }}" class="form-label">{{ label }}</label>
+  <input
+    pInputText
+    [id]="id"
+    [type]="type"
+    [placeholder]="placeholder"
+    [attr.maxlength]="maxlength"
+    [attr.minlength]="minlength"
+    [attr.max]="max"
+    [attr.min]="min"
+    [formControl]="control"
+    [readonly]="readonly"
+    (input)="changeControl()"
+    (change)="changeControl()"
+    (blur)="onTouch()"
+    class="w-100"
+  />
+  <small class="p-error" *ngIf="ngControl?.invalid && ngControl?.touched">
+    <x-erros *ngIf="ngControl" [ngControl]="ngControl"></x-erros>
+  </small>
+</div>
+
+
+<!-- <div class="form-group">
   <mat-form-field appearance="outline" class="w-100">
     <mat-label *ngIf="label">{{ label }}</mat-label>
     <input
@@ -20,7 +44,7 @@
       <x-erros *ngIf="ngControl" [ngControl]="ngControl"></x-erros>
     </mat-error>
   </mat-form-field>
-</div>
+</div> -->
 
 <!-- <div class="form-group">
 

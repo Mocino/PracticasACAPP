@@ -5,6 +5,7 @@ import { XErrosComponent } from './components/x-erros/x-erros.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { XSeparadorComponent } from './components/x-separador/x-separador.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 let componets: any[] = [
   XInputComponent,
@@ -19,12 +20,13 @@ let componets: any[] = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    InputTextModule
   ],
   exports: [
     ...componets,
     ReactiveFormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ]
 })
 export class CoreModule { }
